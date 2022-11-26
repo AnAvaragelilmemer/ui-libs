@@ -46,7 +46,7 @@ Time = <number> - The duration of the notfication.
 
 
 
-Example:AddButton({
+example:AddButton({
 	Name = "Button!",
 	Callback = function()
       		print("button pressed")
