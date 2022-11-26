@@ -124,6 +124,16 @@ local Input = example:CreateInput({
 	end,
 })
 
+local Input = example:CreateInput({
+	Name = "Input Example",
+	PlaceholderText = "Input Placeholder",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+		print("hello, world!") -- The function that takes place when the input is changed
+    		print(text)-- The variable (Text) is a string for the value in the text box
+	end,
+})
+
 --rayfield documentation https://github.com/shlexware/Rayfield/blob/main/Documentation.md 
 
 
