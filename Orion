@@ -115,7 +115,7 @@ Hold = <bool> - Makes the bind work like: Holding the key > The bind returns tru
 Callback = <function> - The function of the bind.
 ]]
 
-Tab:AddDropdown({
+example:AddDropdown({
 	Name = "Dropdown",
 	Default = "1",
 	Options = {"1", "2"},
