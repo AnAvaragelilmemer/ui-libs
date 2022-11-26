@@ -110,8 +110,10 @@ local Button = example:CreateButton({
     Title = "Notification Title",
     Content = "Notification Content",
     Duration = 6.5,
+    })
     print("Hello, world!")
 	end,
+
 })
 
 local Input = example:CreateInput({
@@ -119,10 +121,11 @@ local Input = example:CreateInput({
 	PlaceholderText = "Input Placeholder",
 	RemoveTextAfterFocusLost = false,
 	Callback = function(Text)
-		print(text)-- The function that takes place when the input is changed
+		print(Text)-- The function that takes place when the input is changed
     		-- The variable (Text) is a string for the value in the text box
 	end,
 })
+
 
 local Input = example:CreateInput({
 	Name = "Input Example",
@@ -130,7 +133,18 @@ local Input = example:CreateInput({
 	RemoveTextAfterFocusLost = false,
 	Callback = function(Text)
 		print("hello, world!") -- The function that takes place when the input is changed
-    		print(text)-- The variable (Text) is a string for the value in the text box
+    		print(Text)-- The variable (Text) is a string for the value in the text box
+	end,
+})
+
+local Dropdown = example:CreateDropdown({
+	Name = "Dropdown Example",
+	Options = {"Option 1","Option 2"},
+	CurrentOption = "Option 1",
+	Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Option)
+	  	  print("erw")-- The function that takes place when the selected option is changed
+    	  -- The variable (Option) is a string for the value that the dropdown was changed to
 	end,
 })
 
