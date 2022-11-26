@@ -1,0 +1,130 @@
+getgenv().SecureMode = true --Rayfield will use secure Mode and attempt to reduce detection, remove this if you want to get detected
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+	Name = "Rayfield Example Window",
+	LoadingTitle = "Rayfield Interface Suite",
+	LoadingSubtitle = "by Sirius",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = nil, -- Create a custom folder for your hub/game
+		FileName = "Big Hub"
+	},
+        Discord = {
+        	Enabled = false,
+        	Invite = "sirius", -- The Discord invite code, do not include discord.gg/
+        	RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+        },
+	KeySystem = true, -- Set this to true to use our key system
+	KeySettings = {
+		Title = "Sirius Hub",
+		Subtitle = "Key System",
+		Note = "type hello",
+		FileName = "SiriusKey",
+		SaveKey = true,
+		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+		Key = "Hello"
+	}
+})
+
+local TabExample = Window:CreateTab("Tab Example", 4483362458) -- Title, Image
+
+local Section = TabExample:CreateSection("this is a section")
+
+local Button = TabExample:CreateButton({
+	Name = "exampleButton",
+	Callback = function()
+		print("pressed")-- The function that takes place when the button is pressed
+	end,
+})
+
+Rayfield:Notify({
+    Title = "Notification Title",
+    Content = "Notification Content",
+    Duration = 6.5,
+    Image = 4483362458,
+    Actions = { -- Notification Buttons
+        Ignore = {
+            Name = "Okay!",
+            Callback = function()
+                print("The user tapped Okay!")
+            end
+		},
+	},
+})
+
+local Toggle = TabExample:CreateToggle({
+	Name = "Toggle",
+	CurrentValue = false,
+	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		print("toggled")-- The function that takes place when the toggle is pressed
+    		-- The variable (Value) is a boolean on whether the toggle is true or false
+	end,
+})
+
+local Toggle = TabExample:CreateToggle({
+	Name = "aimbot",
+	CurrentValue = false,
+	Flag = "Toggle2", 
+	Callback = function(Value)
+		print("aimbot, enabled")
+    		-- The variable (Value) is a boolean on whether the toggle is true or false
+	end,
+})
+
+local Slider = TabExample:CreateSlider({
+	Name = "free robux",
+	Range = {0, 1000},
+	Increment = 10,
+	Suffix = "robux",
+	CurrentValue = 10,
+	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+		print("slided")-- The function that takes place when the slider changes
+    		-- The variable (Value) is a number which correlates to the value the slider is currently at
+	end,
+})
+
+local Slider = TabExample:CreateSlider({
+	Name = "tix",
+	Range = {0, 290},
+	Increment = 1,
+	Suffix = "tix",
+	CurrentValue = 10,
+	Flag = "Slider1", 
+	Callback = function(Value)
+		print("tix")
+    		
+	end,
+})
+
+local example = Window:CreateTab("example2") 
+
+local Paragraph = example:CreateParagraph({Title = "lorem ispum", Content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."})
+
+local Button = example:CreateButton({
+	Name = "notifcation on a button",
+	Callback = function()
+		Rayfield:Notify({
+    Title = "Notification Title",
+    Content = "Notification Content",
+    Duration = 6.5,
+    print("Hello, world!")
+	end,
+})
+
+local Input = example:CreateInput({
+	Name = "Input Example",
+	PlaceholderText = "Input Placeholder",
+	RemoveTextAfterFocusLost = false,
+	Callback = function(Text)
+		print(text)-- The function that takes place when the input is changed
+    		-- The variable (Text) is a string for the value in the text box
+	end,
+})
+
+--rayfield documentation https://github.com/shlexware/Rayfield/blob/main/Documentation.md 
+
+
+
